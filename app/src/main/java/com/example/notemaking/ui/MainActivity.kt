@@ -2,13 +2,9 @@ package com.example.notemaking.ui
 
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.notemaking.model.Note
 import com.example.notemaking.databinding.ActivityMainBinding
-import com.example.notemaking.ui.adapters.NotesRVAdapter
 import com.example.notemaking.viewModel.NoteViewModel
 
 class MainActivity : AppCompatActivity() {

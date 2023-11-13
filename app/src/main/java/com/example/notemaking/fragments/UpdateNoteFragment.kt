@@ -1,13 +1,10 @@
 package com.example.notemaking.fragments
 
-import android.app.AlertDialog
+
 import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -17,7 +14,6 @@ import androidx.navigation.fragment.navArgs
 import com.example.notemaking.R
 import com.example.notemaking.databinding.FragmentUpdateNoteBinding
 import com.example.notemaking.model.Note
-import com.example.notemaking.ui.adapters.NotesRVAdapter
 import com.example.notemaking.viewModel.NoteViewModel
 
 class UpdateNoteFragment : Fragment(R.layout.fragment_update_note) {
@@ -62,40 +58,6 @@ class UpdateNoteFragment : Fragment(R.layout.fragment_update_note) {
         }
 
     }
-
-
-//    private fun deleteNote() {
-//        AlertDialog.Builder(requireActivity()).apply {
-//            setTitle("Delete Note")
-//            setMessage("Are you sure want to delete this Note?")
-//            setPositiveButton("DELETE") { _, _ ->
-//                noteViewModel.deleteNote(currentNote)
-//                view?.findNavController()?.navigate(
-//                    R.id.action_updateNoteFragment_to_homeFragment
-//                )
-//            }
-//            setNegativeButton("CANCEL", null)
-//        }.create().show()
-//    }
-
-//    @Deprecated("Deprecated in Java")
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.delete_menu -> {
-//                deleteNote()
-//                return true
-//            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//
-//    }
-
-//    @Deprecated("Deprecated in Java")
-//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-//        super.onCreateOptionsMenu(menu, inflater)
-//        inflater.inflate(R.menu.update_menu, menu)
-//    }
-
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

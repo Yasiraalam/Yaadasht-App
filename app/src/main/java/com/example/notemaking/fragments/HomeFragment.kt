@@ -66,7 +66,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         val noteAdapter = NotesRVAdapter (
             onLongPressListener = { selectedNote ->
-                // Handle long press (e.g., show delete dialog)
+                // Handle long press
                 showDeleteDialog(selectedNote)
             }
         )

@@ -56,20 +56,5 @@ private  val differCallback=
     }
 
     inner class NoteViewHolder(itemBinding:ItemNoteBinding) : RecyclerView.ViewHolder(itemBinding.root)
-//    {
-//        fun bind(item: Note) {
-//            binding.noteText.text = item.text
-//            binding.deleteBtn.setOnClickListener {
-//                listener.onItemClicked(item)
-//            }
-//        }
-//    }
-//    fun updateList(newList: List<Note>){
-//        allNotes.clear()
-//        allNotes.addAll(newList)
-//        notifyDataSetChanged()
-//    }
+
 }
-//interface INotesRVAdapter{
-//    fun onItemClicked(note: Note)
-//}
