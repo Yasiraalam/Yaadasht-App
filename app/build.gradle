@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.devtools.ksp'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
 
 }
 
@@ -48,10 +50,8 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
 
-
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-
     ksp 'androidx.room:room-compiler:2.6.0'
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
@@ -77,4 +77,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
+
+    // Kotlin navigation
+    def nav_version = "2.7.5"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 }
