@@ -11,16 +11,15 @@
        android:id="@+id/noteCard"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:layout_margin="8dp"
-       android:background="@color/white"
-       app:cardCornerRadius="5dp"
+       android:layout_margin="5dp"
+       app:cardCornerRadius="12dp"
        app:cardElevation="8dp">
 
 
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:padding="16dp"
+           android:padding="13dp"
            android:orientation="vertical">
 
            <TextView
@@ -39,7 +38,7 @@
                android:maxHeight="170dp"
                android:layout_marginTop="16dp"
                android:textSize="16sp"
-               android:textColor="@color/hintColor"/>
+               android:textColor="@color/black"/>
        </LinearLayout>
    </androidx.cardview.widget.CardView>
 

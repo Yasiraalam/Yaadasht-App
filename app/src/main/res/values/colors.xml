@@ -6,8 +6,19 @@
     <color name="hintColor">#928E8E</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="skyblue">#25BBBB</color>
     <color name="background_white">#EDE9E9</color>
-    <color name="green">#17D219</color>
+    <color name="green">#ABE2AC</color>
+
+    <!--note color-->
+    <color name="NoteColor1">#FF6263</color>
+    <color name="NoteColor2">#23C4ED</color>
+    <color name="NoteColor3">#38CC77</color>
+    <color name="NoteColor4">#D9D55B</color>
+    <color name="NoteColor5">#319BD1</color>
+    <color name="NoteColor6">#D345D0</color>
+
+
 </resources>
 <!--<color name="colorPrimary">#803c94</color>-->
 <!--<color name="colorPrimaryDark">#803c94</color>-->

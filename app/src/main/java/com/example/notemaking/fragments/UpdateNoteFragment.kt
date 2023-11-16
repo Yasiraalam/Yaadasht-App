@@ -47,13 +47,13 @@ class UpdateNoteFragment : Fragment(R.layout.fragment_update_note) {
             if (title.isNotEmpty()) {
                 val note = Note(currentNote.id, title, body)
                 noteViewModel.updateNote(note)
+                Toast.makeText(requireContext(), "Note Updated!", Toast.LENGTH_SHORT).show()
                 view.findNavController().navigate(
                     R.id.action_updateNoteFragment_to_homeFragment
                 )
 
             } else {
-                Toast.makeText(requireContext(), "Please Enter title name!", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(requireContext(), "Please Enter title name!", Toast.LENGTH_SHORT).show()
             }
         }
 

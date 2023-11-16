@@ -40,11 +40,11 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    android:background="@drawable/note_bg"
                     android:id="@+id/NoteBody"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
-                    android:background="@android:color/transparent"
                     android:gravity="start|top"
                     android:hint="Type something..."
                     android:inputType="textMultiLine"

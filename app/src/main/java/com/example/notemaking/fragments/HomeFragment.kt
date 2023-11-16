@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -20,7 +21,7 @@ import com.example.notemaking.ui.MainActivity
 import com.example.notemaking.ui.adapters.NotesRVAdapter
 import com.example.notemaking.viewModel.NoteViewModel
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextListener {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var noteViewModel: NoteViewModel
@@ -50,6 +51,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         }
     }
+
     private fun showDeleteDialog(selectedNote: Note) {
         AlertDialog.Builder(requireContext()).apply {
             setTitle("Delete Note")
@@ -63,8 +65,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setUpRecylerView() {
-
-        val noteAdapter = NotesRVAdapter (
+        noteAdapter = NotesRVAdapter(
+            requireContext(),
             onLongPressListener = { selectedNote ->
                 // Handle long press
                 showDeleteDialog(selectedNote)
@@ -99,7 +101,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
+        menu.clear()
         inflater.inflate(R.menu.home_menu, menu)
+        val mMenuSearch = menu.findItem(R.id.menu_search).actionView as SearchView
+        mMenuSearch.isSubmitButtonEnabled = true
+        mMenuSearch.setOnQueryTextListener(this)
     }
 
     override fun onDestroy() {
@@ -107,5 +113,26 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         _binding = null
     }
 
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if (query != null) {
+            searchNote(query)
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        if (newText != null) {
+            searchNote(newText)
+        }
+        return true
+    }
+
+    fun searchNote(query: String?) {
+        val searchQuery = "%$query%"
+        noteViewModel.searchNote(searchQuery).observe(this, { list ->
+            noteAdapter.differ.submitList(list)
+
+        })
+    }
 
 }

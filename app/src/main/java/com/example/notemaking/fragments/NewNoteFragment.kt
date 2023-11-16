@@ -1,6 +1,7 @@
 package com.example.notemaking.fragments
 
 import android.app.Application
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import com.example.notemaking.model.Note
 import com.example.notemaking.ui.MainActivity
 import com.example.notemaking.viewModel.NoteViewModel
 import com.google.android.material.snackbar.Snackbar
+import java.util.Random
 
 
 class NewNoteFragment : Fragment(R.layout.fragment_new_note) {
