@@ -15,7 +15,7 @@ https://github.com/Yasiraalam/Yaadasht-App/assets/94714966/42972457-23a8-4f14-a4
 
 You can download the latest version of the Yaadasht app from the following link:
 
-[Download Yaadasht APK](https://your-download-link.com)
+[Download Yaadasht APK]([https://your-download-link.com](https://github.com/Yasiraalam/Yaadasht-App/releases/download/v1.0.0/app-debug.apk))
 
 ## Installation
 
