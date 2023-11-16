@@ -27,6 +27,13 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Update Note Here"
+                    android:textSize="19sp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/colorPrimary"/>
 
                 <EditText
                     android:id="@+id/NoteTitle_Update"
@@ -45,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/note_bg"
                     android:gravity="start|top"
                     android:hint="Type something..."
                     android:inputType="textMultiLine"
